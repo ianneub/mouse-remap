@@ -1,4 +1,5 @@
-// Draws the app icon and writes Resources/AppIcon.icns.
+// Draws the app icon and writes Resources/AppIcon.icns and docs/icon.png
+// (the README's copy; GitHub can't show .icns).
 // Run: swift scripts/make-icon.swift   (from the repo root)
 import AppKit
 
@@ -95,5 +96,6 @@ let p = Process()
 p.executableURL = URL(fileURLWithPath: "/usr/bin/iconutil")
 p.arguments = ["-c", "icns", iconset.path, "-o", "Resources/AppIcon.icns"]
 try p.run(); p.waitUntilExit()
-try draw(512).representation(using: .png, properties: [:])!.write(to: URL(fileURLWithPath: "build/icon-preview.png"))
-print("wrote Resources/AppIcon.icns")
+try fm.createDirectory(atPath: "docs", withIntermediateDirectories: true)
+try draw(512).representation(using: .png, properties: [:])!.write(to: URL(fileURLWithPath: "docs/icon.png"))
+print("wrote Resources/AppIcon.icns and docs/icon.png")

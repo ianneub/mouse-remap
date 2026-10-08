@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/icon.png" width="160" alt="MouseRemap icon"></p>
+
 # MouseRemap
 
 A tiny headless macOS app that does exactly three things for a Logitech
@@ -92,7 +94,8 @@ call it "not trusted"; that's fine for local signing.
 - Button actions: `GestureButton.action` (thumb button) and the
   `otherMouseDown` case in `EventTap.swift` (wheel click). Available actions
   are in `DockActions.swift`: Mission Control, App Exposé, Show Desktop.
-- Icon: `swift scripts/make-icon.swift` redraws `Resources/AppIcon.icns`.
+- Icon: `swift scripts/make-icon.swift` redraws `Resources/AppIcon.icns`
+  and `docs/icon.png`.
 
 ## Uninstall
 
